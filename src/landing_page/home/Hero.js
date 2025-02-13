@@ -6,7 +6,7 @@ function Hero() {
     <div className="container mb-5">
       <div className="row text-center">
         <div className="col">
-          <img src="media/images/homeHero.png" alt="Hero" className="img-fluid mb-5" />
+          <img src="media/Images/homeHero.png" alt="Hero" className="img-fluid mb-5" />
           <h1 className="mt-5 mb-3">Invest in Everything</h1>
           <p className="mb-4 fs-5" style={{ opacity: 0.9 }}>
             Online platform to invest in stocks, derivatives, mutual funds, and more.

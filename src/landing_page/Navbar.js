@@ -12,7 +12,7 @@ function Navbar() {
           to= {"/"}
         >
           <img
-            src="media/images/logo.svg"
+            src="media/Images/logo.svg"
             alt="Zerodha Logo"
             style={{ height: "20px", marginLeft: "-35px" }}
           />
