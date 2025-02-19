@@ -26,16 +26,16 @@ function Signup() {
       let data;
       try {
         data = await response.json();
-      } catch (jsonError) {
+      } catch {
         throw new Error("Invalid JSON response from server.");
       }
 
       if (response.ok) {
         console.log("Signing up user:", formData.username);
-
-        // Store the username and token in localStorage
         localStorage.setItem("user", JSON.stringify({ username: formData.username }));
-        localStorage.setItem("token", data.token);  // Assuming the token is part of the response
+        if (data.token) {
+          localStorage.setItem("token", data.token);
+        }
 
         Swal.fire({
           title: "Signup Successful!",
@@ -44,12 +44,12 @@ function Signup() {
           confirmButtonText: "Go to Dashboard",
           timer: 2000,
         }).then(() => {
-          window.location.href = "https://zerodha-dashboard-nh23.onrender.com"; // Correct navigation
+          window.location.href = "https://zerodha-dashboard-nh23.onrender.com"; // Use navigate() if the dashboard is in the same app
         });
       } else {
         Swal.fire({
           title: "Signup Failed!",
-          text: data.message || "Something went wrong. Please try again.",
+          text: data?.message || "Something went wrong. Please try again.",
           icon: "error",
           confirmButtonText: "Try Again",
         });
@@ -90,19 +90,44 @@ function Signup() {
           {/* Form */}
           <form onSubmit={handleSubmit} style={{ width: "100%", maxWidth: "400px" }}>
             <div className="mb-3">
-              <input type="text" name="username" className="form-control fs-5" placeholder="Username" value={formData.username} onChange={handleChange} required />
+              <input
+                type="text"
+                name="username"
+                className="form-control fs-5"
+                placeholder="Username"
+                value={formData.username}
+                onChange={handleChange}
+                required
+              />
             </div>
 
             <div className="mb-3">
-              <input type="email" name="email" className="form-control fs-5" placeholder="Email" value={formData.email} onChange={handleChange} required />
+              <input
+                type="email"
+                name="email"
+                className="form-control fs-5"
+                placeholder="Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
             </div>
 
             <div className="mb-3">
-              <input type="password" name="password" className="form-control fs-5" placeholder="Password" value={formData.password} onChange={handleChange} required />
+              <input
+                type="password"
+                name="password"
+                className="form-control fs-5"
+                placeholder="Password"
+                value={formData.password}
+                onChange={handleChange}
+                required
+                autoComplete="off"
+              />
             </div>
 
             <div className="d-grid">
-              <button type="submit" className="btn btn-primary" style={{ padding: "5px", width: "50%", fontSize: "1.1rem" }}>
+              <button type="submit" className="btn btn-primary w-100 fs-5">
                 Continue
               </button>
             </div>
