@@ -1,0 +1,52 @@
+.sidebar {
+    position: relative;
+  }
+  
+  .hamburger {
+    font-size: 24px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 10px;
+  }
+  
+  .menu-card {
+    position: absolute;
+    top: 40px;
+    left: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 250px;
+    padding: 20px;
+    z-index: 1000;
+  }
+  
+  .menu-header h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+  }
+  
+  .menu-section {
+    margin-top: 20px;
+  }
+  
+  .menu-section h3 {
+    margin: 0 0 10px 0;
+    font-size: 18px;
+    color: #555;
+  }
+  
+  .menu-section ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .menu-section ul li {
+    padding: 5px 0;
+    font-size: 14px;
+    color: #777;
+  }

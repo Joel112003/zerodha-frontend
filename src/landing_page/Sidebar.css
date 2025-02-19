@@ -1,0 +1,137 @@
+/* Sidebar Container */
+.sidebar {
+    position: absolute;
+    top: 70px;
+    left: 50%;
+    margin-left: 170px;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    border-radius: 12px;
+    padding: 25px;
+    width: 85%;
+    max-width: 940px;
+    z-index: 1000;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease-in-out, visibility 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.sidebar.open {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(10px);
+}
+
+/* Menu Content */
+.menu-content {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    width: 100%;
+}
+
+/* Menu Rows */
+.menu-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    gap: 25px;
+}
+
+/* Menu Item */
+.menu-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1;
+    padding: 15px;
+    border-radius: 10px;
+    transition: background 0.2s ease-in-out;
+}
+
+.menu-item:hover {
+    background-color: #f0f0f0;
+}
+
+.menu-item img.logo {
+    width: 55px;
+    height: 55px;
+    margin-bottom: 8px;
+}
+
+.menu-item h5 {
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #222;
+    margin: 8px 0 4px;
+}
+
+.menu-item p {
+    font-size: 0.9rem;
+    color: #666;
+}
+
+/* Sections */
+.menu-section {
+    flex: 1;
+    text-align: left;
+}
+
+.menu-section h5 {
+    font-size: 1.05rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.menu-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.menu-section ul li {
+    font-size: 0.95rem;
+    color: #444;
+    margin-bottom: 6px;
+    transition: color 0.2s ease-in-out;
+}
+
+.menu-section ul li:hover {
+    color: #007BFF;
+    cursor: pointer;
+}
+
+/* Education Section */
+.education-subitems {
+    display: flex;
+    gap: 18px;
+    align-items: center;
+}
+
+.education-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 12px;
+    border-radius: 8px;
+    transition: background 0.2s ease-in-out;
+}
+
+.education-item:hover {
+    background-color: #f8f8f8;
+}
+
+.education-item img {
+    width: 45px;
+    height: 45px;
+}
+
+.education-item p {
+    font-size: 0.9rem;
+    margin-top: 6px;
+    color: #555;
+}

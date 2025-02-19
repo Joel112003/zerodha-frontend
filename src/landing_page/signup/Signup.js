@@ -17,7 +17,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("http://{process.env.REACT_APP_API_URL}/auth/signup", {
+      const response = await fetch("https://zerodha-backend-rhaz.onrender.com/auth/signup", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -32,7 +32,10 @@ function Signup() {
 
       if (response.ok) {
         console.log("Signing up user:", formData.username);
+
+        // Store the username and token in localStorage
         localStorage.setItem("user", JSON.stringify({ username: formData.username }));
+        localStorage.setItem("token", data.token);  // Assuming the token is part of the response
 
         Swal.fire({
           title: "Signup Successful!",
@@ -41,7 +44,7 @@ function Signup() {
           confirmButtonText: "Go to Dashboard",
           timer: 2000,
         }).then(() => {
-          window.location.href = "http://localhost:3000/dashboard"; // Correct navigation
+          window.location.href = "https://zerodha-dashboard-nh23.onrender.com"; // Correct navigation
         });
       } else {
         Swal.fire({

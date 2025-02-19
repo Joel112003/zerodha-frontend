@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Sidebar from "./Sidebar";
 function Navbar() {
   return (
     <nav
@@ -55,10 +56,7 @@ function Navbar() {
             </li>
           </ul>
         </div>
-        <span
-          className="navbar-toggler-icon fs-5"
-          style={{ marginLeft: "40px", marginRight: "-50px" }}
-        ></span>
+        <Sidebar />
       </div>
     </nav>
   );

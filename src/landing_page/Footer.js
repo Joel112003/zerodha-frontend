@@ -23,7 +23,7 @@ function Footer() {
         <div className="row mt-5">
           <div className="col">
             <img
-              src="media/images/logo.svg"
+              src="media/Images/logo.svg"
               alt="Zerodha Logo"
               style={{ height: "20px" }}
             />
