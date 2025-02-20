@@ -44,7 +44,7 @@ function Signup() {
           confirmButtonText: "Go to Dashboard",
           timer: 2000,
         }).then(() => {
-          window.location.href = "https://zerodha-dashboard-head.onrender.com/"; // Use navigate() if the dashboard is in the same app
+          window.location.href = "https://zerodha-dashboard-head.onrender.com"; // Use navigate() if the dashboard is in the same app
         });
       } else {
         Swal.fire({
