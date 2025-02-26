@@ -17,7 +17,7 @@ function Signup() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await fetch("https://zerodha-backend-rhaz.onrender.com/auth/signup", {
+      const response = await fetch(`${process.env.REACT_APP_BACKEND_URL}/auth/signup`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(formData),
@@ -43,8 +43,9 @@ function Signup() {
           icon: "success",
           confirmButtonText: "Go to Dashboard",
           timer: 2000,
-        }).then(() => {
-          window.location.href = "https://zerodha-dashboard-head.onrender.com"; // Use navigate() if the dashboard is in the same app
+        }).then(() => {          
+          window.location.href = process.env.REACT_APP_DASHBOARD_URL 
+
         });
       } else {
         Swal.fire({
